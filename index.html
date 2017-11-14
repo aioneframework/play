@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="http://aioneframework.com/aioneframework/assets/css/aione.min.css">
+	<style type="text/css">
+		.aione-play-footer{
+		    margin: 0;
+		    position: fixed;
+		    bottom: 0;
+		    width: 100%;
+		    z-index: 9999999;
+		    background-color: white;
+		}
+		.aione-header{
+			background-color: #fff;
+
+		}
+	
+	</style>
+</head>
+<body>
+	<div id="aione_wrapper" class="aione-wrapper aione-layout- aione-theme-arcane">
+		<div class="aione-row">
+			<div id="aione_header" class="aione-header">
+				<div class="ar white line-height-40 aione-border-bottom">
+					<div class="ac l50 m50 s50">
+						<img src="assets/images/logo.png" class="aione-float-left" style="width:38px;background-color: white">
+						<h4 class="grey darken-2 m-0 font-size-20 font-weight-200 line-height-40 ph-10">Aione Framework Code Playground
+						</h4>
+					</div>
+					<div class="ac l50 m50 s50 aione-align-right">
+						
+					</div>
+				</div>
+			</div><!-- #aione-header -->
+			<div id="aione_main" class="aione-main">
+				<div id="aione_content" class="content">
+					<div class="ar aione-border-bottom">
+						<div class="ac l50 aione-border-right ph-10">
+							<div class="aione-float-left line-height-42">HTML code</div>
+							<div class="aione-float-right">
+								<select style="width: 136px;    min-height: 34px;font-size: 14px;margin: 5px 0px">
+									<option disabled selected>Select Theme</option>
+									<option>Light</option>
+									<option>Dark</option>
+									
+								</select>
+							</div>
+							<div class="aione-float-right editor-data line-height-42 pr-10"></div>
+						</div>
+						<div class="ac l50 ph-10">
+							<div class="aione-float-left line-height-42">HTML viewer</div>
+							<div class="aione-float-left ph-10">
+								<i class="fa fa-mobile line-height-42 font-size-24 pr-10"></i>
+								<i class="fa fa-tablet line-height-42 font-size-24 pr-10"></i>
+								<i class="fa fa-desktop line-height-42 font-size-22 pr-10"></i>
+							</div>
+							<div class="aione-float-right">
+								<a href="#" class="fullscreen"><i class="fa fa-arrows-alt line-height-42 font-size-20"></i></a>
+								<a href="#" class="halfscreen"><i class="fa fa-close line-height-42 font-size-20"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="ar">
+						<div class="ac l50 m50 s100 p-0" style="position: absolute;top: 82px;bottom: 43px;">
+							<div id="editor" style="height: 100%">
+				
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="ac l50 m50 s100 p-0 aione-border-left aione-output" style="position: absolute;left: 50%;top: 82px;bottom: 43px;    overflow-y: auto;">
+						
+							
+
+						</div>
+					</div>			
+				</div>
+				
+			</div><!-- #aione-content -->
+			<div id="aione_footer" class="aione-footer aione-play-footer">
+				2017 OXO Solutions. All rights reserved.
+			</div><!-- #aione-footer -->
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
+	<script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+
+   <script type="text/javascript">
+	    var editor = ace.edit("editor");
+	    editor.setTheme("ace/theme/chrome");
+	    editor.setOptions({
+		  fontSize: "13pt"
+		});
+	    editor.getSession().setMode("ace/mode/html");
+	    editor.session.setValue();
+
+	    require("ace/ext/emmet");
+		editor.setOption("enableEmmet", true); 
+
+	</script>
+</body>
+</html>
