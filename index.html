@@ -14,9 +14,78 @@
 		}
 		.aione-header{
 			background-color: #fff;
+		}
+		.iframe-responsive{		
+			width: 360px;
+			height: 480px;
+			overflow: hidden; 
+			background-color: #FFFFFF;
+		}
+		.iframe-responsive iframe{		
+			width: 360px;
+			height: 480px;
+		}
+		.mobile-frame {
+			position: relative;
+			display: inline-block;
+			background: #4f4c4b;
+			padding: 4rem 1rem 3rem 1rem;
+			-webkit-border-radius: 18rem/3rem;
+			border-radius: 18rem/3rem;
+			bottom: -13rem;
+			margin-top: -13rem;
+			-webkit-box-shadow: 0 0 8rem rgba(36,33,32,.1);
+			box-shadow: 0 0 8rem rgba(36,33,32,.1);
+			z-index: 1;
+		}
 
-			
-
+		.mobile-frame:before {
+			-webkit-border-radius: 1rem 0 0 1rem;
+			border-radius: 1rem 0 0 1rem;
+			left: -.5rem;
+			height: 10rem;
+			top: 20rem;
+			position: absolute;
+			width: .5rem;
+			background: #242120;
+			content: "";
+		}
+		.mobile-frame .mobile-screen {
+			position: relative;
+		}
+		.mobile-frame .mobile-screen:before {
+			content: "";
+			position: absolute;
+			top: -2rem;
+			left: 50%;
+			z-index: 10;
+			background: #242120;
+			height: .2rem;
+			width: .2rem;
+			-webkit-box-shadow: 0 0 0 10px #393736;
+			box-shadow: 0 0 0 10px #393736;
+			-webkit-border-radius: 1rem;
+			border-radius: 1rem;
+		}
+		.mobile-frame .mobile-screen img {
+			width: auto;
+			-webkit-border-radius: .5rem;
+			border-radius: .5rem;
+			position: relative;
+			max-width: 300px;
+			max-height: 67vh;
+			min-height: 40rem;
+		}
+		.mobile-frame:after {
+			-webkit-border-radius: 0 1rem 1rem 0;
+			border-radius: 0 1rem 1rem 0;
+			right: -.5rem;
+			height: 6rem;
+			top: 12rem;
+			position: absolute;
+			width: .5rem;
+			background: #242120;
+			content: "";
 		}
 	
 	</style>
@@ -54,9 +123,9 @@
 						<div class="ac l50 ph-10">
 							<div class="aione-float-left line-height-42">HTML viewer</div>
 							<div class="aione-float-left ph-10">
-								<i class="fa fa-mobile line-height-42 font-size-24 pr-10"></i>
-								<i class="fa fa-tablet line-height-42 font-size-24 pr-10"></i>
-								<i class="fa fa-desktop line-height-42 font-size-22 pr-10"></i>
+								<a href="#" class="view-mobile"><i class="fa fa-mobile line-height-42 font-size-24 pr-10"></i></a>
+								<a href="#" class="view-tablet"><i class="fa fa-tablet line-height-42 font-size-24 pr-10"></i></a>
+								<a href="#" class="view-desktop"><i class="fa fa-desktop line-height-42 font-size-22 pr-10"></i></a>
 							</div>
 							<div class="aione-float-right">
 								<a href="#" class="fullscreen"><i class="fa fa-arrows-alt line-height-42 font-size-20"></i></a>
@@ -71,10 +140,18 @@
 							</div>
 							<div class="clear"></div>
 						</div>
-						<div class="ac l50 m50 s100 p-0 aione-border-left aione-output" style="position: absolute;left: 50%;top: 82px;bottom: 43px;    overflow-y: auto;">
-						
-							
-
+						<div class="ac l50 m50 s100 p-0 aione-border-left aione-align-center" style="position: absolute;left: 50%;top: 82px;bottom: 43px;    overflow-y: auto;">
+							<div style="width:100%;position:relative">
+								<div class="mobile-frame">
+									<div class="mobile-screen">
+										<div class="iframe-responsive">
+										    <div class="aione-output aione-align-left" >
+										    	
+										    </div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>			
 				</div>
@@ -86,20 +163,24 @@
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
-	<script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
+	<script type="text/javascript" src="assets/js/require.js"></script>
+	<script type="text/javascript" src="http://cloud9ide.github.io/emmet-core/emmet.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
+	
 
    <script type="text/javascript">
+   		require("ace/ext/emmet");
 	    var editor = ace.edit("editor");
 	    editor.setTheme("ace/theme/chrome");
 	    editor.setOptions({
-		  fontSize: "13pt"
+		  fontSize: "13pt",
+		  enableEmmet: true
 		});
 	    editor.getSession().setMode("ace/mode/html");
-	    editor.session.setValue();
+	    // editor.session.setValue();
 
-	    require("ace/ext/emmet");
+	    
 		editor.setOption("enableEmmet", true); 
 
 	</script>

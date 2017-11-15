@@ -34,7 +34,7 @@ $(document).ready(function(){
 		$(this).hide();
 		$('.ace_editor').hide();
 		$('.halfscreen').show();
-		$('.aione-output').css({'width': '100%','left': '0%'});
+		$('.aione-output').css({'left': '0%'});
 	});
 	$(document).on('click','.halfscreen',function(e){
 		e.preventDefault();
@@ -43,4 +43,26 @@ $(document).ready(function(){
 		$('.halfscreen').hide();
 		$('.aione-output').css({'left': '50%'});
 	});
+
+	//mofile
+	// 479px
+	$('.view-mobile').click(function(){
+		// $('.aione-output').css({
+		// 	'width': '479px',
+		//     'border': '7px solid lightgray',
+		//     'border-radius': '19px'
+		// });
+		alert("hello");
+		$('.aione-delault').removeClass('aione-output');
+		$('.mobile-frame').show();
+
+	});
+
+	//tab
+	// 767px
+
+
+
+	//desktop
+	// 991px
 });
