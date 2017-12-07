@@ -87,6 +87,26 @@
 			background: #242120;
 			content: "";
 		}
+		.view-tablet > i,
+		.view-mobile > i,
+		.view-desktop > i{
+			width: 30px;
+			border-bottom: 2px solid transparent;
+		}
+		.view-tablet > i:hover,
+		.view-mobile > i:hover,
+		.view-desktop > i:hover{
+			border-bottom: 2px solid orange;
+			
+		}
+		.fullscreen{
+			    border: 1px solid;
+    line-height: 16px;
+    padding: 6px;
+    margin: 7px;
+    display: inline-block;
+    color: grey;
+		}
 	
 	</style>
 </head>
@@ -95,10 +115,9 @@
 		<div class="aione-row">
 			<div id="aione_header" class="aione-header">
 				<div class="ar white line-height-40 aione-border-bottom">
-					<div class="ac l50 m50 s50">
-						<img src="assets/images/logo.png" class="aione-float-left" style="width:38px;background-color: white">
-						<h4 class="grey darken-2 m-0 font-size-20 font-weight-200 line-height-40 ph-10">Aione Framework Code Playground
-						</h4>
+					<div class="ac l50 m50 s50 pv-5">
+						<img src="http://aioneframework.com/resources/logo/aione-framework-logo-small.png" class="aione-float-left" style="height:30px">
+					
 					</div>
 					<div class="ac l50 m50 s50 aione-align-right">
 						
@@ -122,13 +141,13 @@
 						</div>
 						<div class="ac l50 ph-10">
 							<div class="aione-float-left line-height-42">HTML viewer</div>
-							<div class="aione-float-left ph-10">
-								<a href="#" class="view-mobile"><i class="fa fa-mobile line-height-42 font-size-24 pr-10"></i></a>
-								<a href="#" class="view-tablet"><i class="fa fa-tablet line-height-42 font-size-24 pr-10"></i></a>
-								<a href="#" class="view-desktop"><i class="fa fa-desktop line-height-42 font-size-22 pr-10"></i></a>
+							<div class="aione-float-right ph-10">
+								<a href="#" class="view-mobile"><i class="fa fa-mobile grey darken-2 line-height-40 font-size-24 aione-align-center"></i></a>
+								<a href="#" class="view-tablet"><i class="fa fa-tablet grey darken-2 line-height-40 font-size-24 aione-align-center"></i></a>
+								<a href="#" class="view-desktop"><i class="fa fa-desktop grey darken-2 line-height-40 font-size-22 aione-align-center"></i></a>
 							</div>
-							<div class="aione-float-right">
-								<a href="#" class="fullscreen"><i class="fa fa-arrows-alt line-height-42 font-size-20"></i></a>
+							<div class="">
+								<a href="#" class="fullscreen"><i class="fa fa-arrows-alt font-size-20"></i></a>
 								<a href="#" class="halfscreen"><i class="fa fa-close line-height-42 font-size-20"></i></a>
 							</div>
 						</div>
