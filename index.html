@@ -99,13 +99,14 @@
 			border-bottom: 2px solid orange;
 			
 		}
-		.fullscreen{
-			    border: 1px solid;
-    line-height: 16px;
-    padding: 6px;
-    margin: 7px;
-    display: inline-block;
-    color: grey;
+		.fullscreen,
+		.halfscreen{
+			border: 1px solid;
+		    line-height: 16px;
+		    padding: 6px;
+		    margin: 7px;
+		    display: inline-block;
+		    color: grey;
 		}
 	
 	</style>
@@ -129,26 +130,42 @@
 					<div class="ar aione-border-bottom">
 						<div class="ac l50 aione-border-right ph-10">
 							<div class="aione-float-left line-height-42">HTML code</div>
-							<div class="aione-float-right">
-								<select style="width: 136px;    min-height: 34px;font-size: 14px;margin: 5px 0px">
+							<div class="aione-float-right ">
+								<!-- <select style="width: 136px;    min-height: 34px;font-size: 14px;margin: 5px 0px">
 									<option disabled selected>Select Theme</option>
 									<option>Light</option>
 									<option>Dark</option>
 									
-								</select>
+								</select> -->
+								<div id="field_2864" data-conditions="0" data-field-type="switch" class="field-wrapper ac field-wrapper-show_header field-wrapper-type-switch ">
+									
+
+									<div id="field_show_header" class="field field-type-switch">
+										
+										<input name="show_header" type="hidden" value="0">
+										<input class="show_header" id="input_show_header" checked="checked" name="show_header" type="checkbox" value="1">
+										
+										<label class="switch" for="input_show_header">
+											
+									    	<span class="handle"></span>
+									    	
+										</label>
+											
+									</div><!-- field -->
+								</div>
 							</div>
-							<div class="aione-float-right editor-data line-height-42 pr-10"></div>
+							<div class="aione-float-right editor-data line-height-42 pr-100"></div>
 						</div>
 						<div class="ac l50 ph-10">
 							<div class="aione-float-left line-height-42">HTML viewer</div>
 							<div class="aione-float-right ph-10">
-								<a href="#" class="view-mobile"><i class="fa fa-mobile grey darken-2 line-height-40 font-size-24 aione-align-center"></i></a>
-								<a href="#" class="view-tablet"><i class="fa fa-tablet grey darken-2 line-height-40 font-size-24 aione-align-center"></i></a>
-								<a href="#" class="view-desktop"><i class="fa fa-desktop grey darken-2 line-height-40 font-size-22 aione-align-center"></i></a>
+								<a href="#" class="view-mobile"><i class="fa fa-mobile grey darken-2 line-height-42 font-size-24 aione-align-center"></i></a>
+								<a href="#" class="view-tablet"><i class="fa fa-tablet grey darken-2 line-height-42 font-size-24 aione-align-center"></i></a>
+								<a href="#" class="view-desktop"><i class="fa fa-desktop grey darken-2 line-height-42 font-size-22 aione-align-center"></i></a>
 							</div>
 							<div class="">
-								<a href="#" class="fullscreen"><i class="fa fa-arrows-alt font-size-20"></i></a>
-								<a href="#" class="halfscreen"><i class="fa fa-close line-height-42 font-size-20"></i></a>
+								<a href="#" class="fullscreen"><i class="fa fa-arrows-alt font-size-14"></i></a>
+								<a href="#" class="halfscreen"><i class="fa fa-close font-size-14"></i></a>
 							</div>
 						</div>
 					</div>
