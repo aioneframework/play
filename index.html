@@ -1,224 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Aione framework Code Playground</title>
 	<link rel="stylesheet" type="text/css" href="http://aioneframework.com/aioneframework/assets/css/aione.min.css">
-	<style type="text/css">
-		.aione-play-footer{
-		    margin: 0;
-		    position: fixed;
-		    bottom: 0;
-		    width: 100%;
-		    z-index: 9999999;
-		    background-color: white;
-		}
-		.aione-header{
-			background-color: #fff;
-		}
-		.iframe-responsive{		
-			width: 360px;
-			height: 480px;
-			overflow: hidden; 
-			background-color: #FFFFFF;
-		}
-		.iframe-responsive iframe{		
-			width: 360px;
-			height: 480px;
-		}
-		.mobile-frame {
-			position: relative;
-			display: inline-block;
-			background: #4f4c4b;
-			padding: 4rem 1rem 3rem 1rem;
-			-webkit-border-radius: 18rem/3rem;
-			border-radius: 18rem/3rem;
-			bottom: -13rem;
-			margin-top: -13rem;
-			-webkit-box-shadow: 0 0 8rem rgba(36,33,32,.1);
-			box-shadow: 0 0 8rem rgba(36,33,32,.1);
-			z-index: 1;
-		}
-
-		.mobile-frame:before {
-			-webkit-border-radius: 1rem 0 0 1rem;
-			border-radius: 1rem 0 0 1rem;
-			left: -.5rem;
-			height: 10rem;
-			top: 20rem;
-			position: absolute;
-			width: .5rem;
-			background: #242120;
-			content: "";
-		}
-		.mobile-frame .mobile-screen {
-			position: relative;
-		}
-		.mobile-frame .mobile-screen:before {
-			content: "";
-			position: absolute;
-			top: -2rem;
-			left: 50%;
-			z-index: 10;
-			background: #242120;
-			height: .2rem;
-			width: .2rem;
-			-webkit-box-shadow: 0 0 0 10px #393736;
-			box-shadow: 0 0 0 10px #393736;
-			-webkit-border-radius: 1rem;
-			border-radius: 1rem;
-		}
-		.mobile-frame .mobile-screen img {
-			width: auto;
-			-webkit-border-radius: .5rem;
-			border-radius: .5rem;
-			position: relative;
-			max-width: 300px;
-			max-height: 67vh;
-			min-height: 40rem;
-		}
-		.mobile-frame:after {
-			-webkit-border-radius: 0 1rem 1rem 0;
-			border-radius: 0 1rem 1rem 0;
-			right: -.5rem;
-			height: 6rem;
-			top: 12rem;
-			position: absolute;
-			width: .5rem;
-			background: #242120;
-			content: "";
-		}
-		.view-tablet > i,
-		.view-mobile > i,
-		.view-desktop > i{
-			width: 30px;
-			border-bottom: 2px solid transparent;
-		}
-		.view-tablet > i:hover,
-		.view-mobile > i:hover,
-		.view-desktop > i:hover{
-			border-bottom: 2px solid orange;
-			
-		}
-		.fullscreen,
-		.halfscreen{
-			border: 1px solid;
-		    line-height: 16px;
-		    padding: 6px;
-		    margin: 7px;
-		    display: inline-block;
-		    color: grey;
-		}
-	
-	</style>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300">
+    <!-- Core-->
+	<script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/vendor.js"></script>
+    <script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/aione.js"></script>
+    <!-- Google Analytics-->
+    <script type="text/javascript" src="http://aioneframework.com/assets/js/ga.js"></script>
+	<!-- Ace -->
+	<script type="text/javascript" src="assets/js/require.js"></script>
+	<script type="text/javascript" src="assets/ace/ace.js"></script>
+	<!-- <script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script> -->
+	<script type="text/javascript" src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
+	<script type="text/javascript" src="assets/ace/ext-emmet.js"></script>
 </head>
 <body>
-	<div id="aione_wrapper" class="aione-wrapper aione-layout- aione-theme-arcane">
-		<div class="aione-row">
-			<div id="aione_header" class="aione-header">
-				<div class="ar white line-height-40 aione-border-bottom">
-					<div class="ac l50 m50 s50 pv-5">
-						<img src="http://aioneframework.com/resources/logo/aione-framework-logo-small.png" class="aione-float-left" style="height:30px">
-					
-					</div>
-					<div class="ac l50 m50 s50 aione-align-right">
+	<div id="aione_wrapper" class="aione-wrapper layout-header-top aione-layout-wide aione-theme-arcane">
+		<div class="wrapper">
+			<div id="aione_header" class="aione-header light sticky">
+				<div class="wrapper">
+					<div class="ar aione-border-bottom">
+						<div class="ac l50 m50 s50 pv-5">
+							<a href="http://aioneframework.com" target="_blank"><img src="http://aioneframework.com/resources/logo/aione-framework-logo-small.png" class="aione-float-left" style="height:30px;padding-right:8px;"></a><h4 class="red m-0 font-weight-100 line-height-30">Playground</h4>
 						
+						</div>
+						<div class="ac l50 m50 s50 pv-5 aione-align-right">
+							<a href="#" class="fullscreen"><i class="fa fa-arrows-alt"></i></a>
+							<a href="#" class="halfscreen"><i class="fa fa-close"></i></a>
+						</div>
 					</div>
 				</div>
+				<div class="clear"></div>
 			</div><!-- #aione-header -->
-			<div id="aione_main" class="aione-main">
-				<div id="aione_content" class="content">
-					<div class="ar aione-border-bottom">
-						<div class="ac l50 aione-border-right ph-10">
-							<div class="aione-float-left line-height-42">HTML code</div>
-							<div class="aione-float-right ">
-								<!-- <select style="width: 136px;    min-height: 34px;font-size: 14px;margin: 5px 0px">
-									<option disabled selected>Select Theme</option>
-									<option>Light</option>
-									<option>Dark</option>
-									
-								</select> -->
-								<div id="field_2864" data-conditions="0" data-field-type="switch" class="field-wrapper ac field-wrapper-show_header field-wrapper-type-switch ">
-									
 
-									<div id="field_show_header" class="field field-type-switch">
-										
-										<input name="show_header" type="hidden" value="0">
-										<input class="show_header" id="input_show_header" checked="checked" name="show_header" type="checkbox" value="1">
-										
-										<label class="switch" for="input_show_header">
-											
-									    	<span class="handle"></span>
-									    	
-										</label>
-											
-									</div><!-- field -->
+			<div id="aione_main" class="aione-main fullwidth">
+				<div class="wrapper">
+					<div id="aione_content" class="aione-content">
+						<div class="wrapper">
+							<div id="aione_page_content" class="aione-page-content">
+								<div class="wrapper">
+
+
+									<div class="ar">
+										<div class="ac l50 m50 s100 p-0">
+											<div id="editor"></div>
+										</div>
+										<div class="ac l50 m50 s100 p-0">
+											<div id="aione-output"></div>
+										</div>
+									</div>	
+
 								</div>
 							</div>
-							<div class="aione-float-right editor-data line-height-42 pr-100"></div>
-						</div>
-						<div class="ac l50 ph-10">
-							<div class="aione-float-left line-height-42">HTML viewer</div>
-							<div class="aione-float-right ph-10">
-								<a href="#" class="view-mobile"><i class="fa fa-mobile grey darken-2 line-height-42 font-size-24 aione-align-center"></i></a>
-								<a href="#" class="view-tablet"><i class="fa fa-tablet grey darken-2 line-height-42 font-size-24 aione-align-center"></i></a>
-								<a href="#" class="view-desktop"><i class="fa fa-desktop grey darken-2 line-height-42 font-size-22 aione-align-center"></i></a>
-							</div>
-							<div class="">
-								<a href="#" class="fullscreen"><i class="fa fa-arrows-alt font-size-14"></i></a>
-								<a href="#" class="halfscreen"><i class="fa fa-close font-size-14"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="ar">
-						<div class="ac l50 m50 s100 p-0" style="position: absolute;top: 82px;bottom: 43px;">
-							<div id="editor" style="height: 100%">
-				
-							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="ac l50 m50 s100 p-0 aione-border-left aione-output" style="position: absolute;left: 50%;top: 82px;bottom: 43px;    overflow-y: auto;">
-							<!-- <div style="width:100%;position:relative" class=""> -->
-								<!-- <div class="mobile-frame">
-									<div class="mobile-screen">
-										<div class="iframe-responsive">
-										    <div class="aione-output aione-align-left" >
-										    	
-										    </div>
-										</div>
-									</div>
-								</div> -->
-							<!-- </div> -->
-						</div>
-					</div>			
-				</div>
-				
-			</div><!-- #aione-content -->
-			<div id="aione_footer" class="aione-footer aione-play-footer">
-				2017 OXO Solutions. All rights reserved.
-			</div><!-- #aione-footer -->
+						</div><!-- .wrapper -->
+					</div><!-- .aione-content -->
+					<div id="aione_copyright" class="aione-copyright sticky">
+						<div class="wrapper aione-align-center line-height-30">
+							&copy;2017 <a href="http://oxoitsolutions.com" target="_blank"><span class="oxo-color">OXO IT SOLUTIONS PVT. LTD.</span></a> All rights reserved. Built with <a href="http://aioneframework.com" target="_blank"><span class="primary-color">Aione</span> <span class="secondary-color">Framework</span></a>. 
+						</div><!-- .aione-row -->
+					</div><!-- .aione-copyright -->
+				</div><!-- .wrapper -->
+			</div>			
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
-	<script type="text/javascript" src="assets/js/require.js"></script>
-	<script type="text/javascript" src="http://cloud9ide.github.io/emmet-core/emmet.js"></script>
-	<script type="text/javascript" src="assets/js/script.js"></script>
+	<style type="text/css">
+		.aione-page-content {
+		    margin: 0;
+		}
+	</style>
 	
-
-   <script type="text/javascript">
-   		require("ace/ext/emmet");
-	    var editor = ace.edit("editor");
-	    editor.setTheme("ace/theme/chrome");
-	    editor.setOptions({
-		  fontSize: "13pt",
-		  enableEmmet: true
+	<script type="text/javascript">
+		//require.config({paths: { "ace" : "assets/ace"}});
+		//require("ace/ext/emmet");
+		var editor = ace.edit("editor");
+		//editor.setValue($('#'+value).val()); 
+		editor.setTheme("ace/theme/chrome");
+		editor.getSession().setMode("ace/mode/html");
+		editor.setAutoScrollEditorIntoView(true);
+		editor.setShowPrintMargin(false);
+		//editor.setOption("enableEmmet", true); 
+		editor.setOption('enableBasicAutocompletion',true);
+		editor.setAutoScrollEditorIntoView(true);
+		
+		editor.getSession().on("change", function () {
+			var data = editor.session.getValue().trim();
+			localStorage.setItem('ace_editor',data);
+			$('.aione-output').html(data);
 		});
-	    editor.getSession().setMode("ace/mode/html");
-	    // editor.session.setValue();
 
-	    
-		editor.setOption("enableEmmet", true); 
+	
+		
 
+	   	$(document).ready(function() {
+	   		editor.focus();
+	   		session = editor.getSession();
+
+
+	   		//append the character cout and append html into output box 
+			document.getElementById('editor').addEventListener('keyup',function(){
+				countData();
+			});
+
+	   		
+	   	});
+	   	//get the line no and total line with character count
+		function countData(){
+			var currline = editor.getSelectionRange().start.row;
+			var wholelinetxt = editor.session.getLine(currline);
+			var current_row_characters = wholelinetxt.toString().trim().length;
+			var data = editor.session.getValue().trim().length;
+			var totalLines = session.getLength();
+
+			$('.editor-data').html('Line '+(currline+1)+' of '+totalLines+' ,Char '+current_row_characters);
+		}	
 	</script>
 </body>
 </html>
