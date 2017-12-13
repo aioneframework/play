@@ -2,19 +2,57 @@
 <html>
 <head>
 	<title>Aione framework Code Playground</title>
+
+	<!-- online code editor, live preview, aione framework -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="identifier-url" content="http://aioneframework.com/" />
+	<meta name="title" content="Aione Framework Code Playground" />
+	<meta name="description" content="Aione framework code playground to edit html code and live preview the output" />
+	<meta name="abstract" content="Aione framework code playground to edit html code and live preview the output" />
+	<meta name="keywords" content="aione framework, editor, code, live, css, framework, css4, layout, playground, help" />
+	<meta name="author" content="OXO IT SOLUTIONS PRIVATE LIMITED" />
+	<meta name="revisit-after" content="10" />
+	<meta name="language" content="EN" />
+	<meta name="copyright" content="©2017 OXO IT SOLUTIONS PRIVATE LIMITED" />
+	<meta name="robots" content="All" />
+	<meta name="application-name" content="Aione Framework Code Playground">
+
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="msapplication-TileImage" content="http://aioneframework.com/assets/images/mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="http://aioneframework.com/assets/images/mstile-70x70.png" />
+	<meta name="msapplication-square150x150logo" content="http://aioneframework.com/assets/images/mstile-150x150.png" />
+	<meta name="msapplication-wide310x150logo" content="http://aioneframework.com/assets/images/mstile-310x150.png" />
+	<meta name="msapplication-square310x310logo" content="http://aioneframework.com/assets/images/mstile-310x310.png" />
+
+
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://aioneframework.com/assets/images/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://aioneframework.com/assets/images/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://aioneframework.com/assets/images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://aioneframework.com/assets/images/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="http://aioneframework.com/assets/images/apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://aioneframework.com/assets/images/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://aioneframework.com/assets/images/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://aioneframework.com/assets/images/apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="http://aioneframework.com/assets/images/favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="http://aioneframework.com/assets/images/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="http://aioneframework.com/assets/images/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="http://aioneframework.com/assets/images/favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="http://aioneframework.com/assets/images/favicon-128.png" sizes="128x128" />
+
+
+
+
 	<link rel="stylesheet" type="text/css" href="http://aioneframework.com/aioneframework/assets/css/aione.min.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400">
     <!-- Core-->
 	<script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/vendor.js"></script>
     <script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/aione.js"></script>
     <!-- Google Analytics-->
     <script type="text/javascript" src="http://aioneframework.com/assets/js/ga.js"></script>
 	<!-- Ace -->
-	<script type="text/javascript" src="assets/js/require.js"></script>
-	<script type="text/javascript" src="assets/ace/ace.js"></script>
-	<!-- <script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script> -->
-	<script type="text/javascript" src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
-	<script type="text/javascript" src="assets/ace/ext-emmet.js"></script>
+	<script type="text/javascript" src="ace/ace.js"></script>
+	<script type="text/javascript" src="assets/js/emmet.js"></script>
+	<script type="text/javascript" src="ace/ext-emmet.js"></script>
 </head>
 <body>
 	<div id="aione_wrapper" class="aione-wrapper layout-header-top aione-layout-wide aione-theme-arcane">
@@ -26,10 +64,12 @@
 							<a href="http://aioneframework.com" target="_blank"><img src="http://aioneframework.com/resources/logo/aione-framework-logo-small.png" class="aione-float-left" style="height:30px;padding-right:8px;"></a><h4 class="red m-0 font-weight-100 line-height-30">Playground</h4>
 						
 						</div>
+						<!-- 
 						<div class="ac l50 m50 s50 pv-5 aione-align-right">
 							<a href="#" class="fullscreen"><i class="fa fa-arrows-alt"></i></a>
 							<a href="#" class="halfscreen"><i class="fa fa-close"></i></a>
 						</div>
+						 -->
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -41,14 +81,12 @@
 						<div class="wrapper">
 							<div id="aione_page_content" class="aione-page-content">
 								<div class="wrapper">
-
-
-									<div class="ar">
+									<div class="ar aione-play-wrapper">
 										<div class="ac l50 m50 s100 p-0">
-											<div id="editor"></div>
+											<div id="editor" class="editor"></div>
 										</div>
 										<div class="ac l50 m50 s100 p-0">
-											<div id="aione-output"></div>
+											<div id="aione-output" class="preview"></div>
 										</div>
 									</div>	
 
@@ -56,8 +94,8 @@
 							</div>
 						</div><!-- .wrapper -->
 					</div><!-- .aione-content -->
-					<div id="aione_copyright" class="aione-copyright sticky">
-						<div class="wrapper aione-align-center line-height-30">
+					<div id="aione_copyright" class="aione-copyright light sticky">
+						<div class="wrapper aione-align-center font-weight-400 line-height-30">
 							&copy;2017 <a href="http://oxoitsolutions.com" target="_blank"><span class="oxo-color">OXO IT SOLUTIONS PVT. LTD.</span></a> All rights reserved. Built with <a href="http://aioneframework.com" target="_blank"><span class="primary-color">Aione</span> <span class="secondary-color">Framework</span></a>. 
 						</div><!-- .aione-row -->
 					</div><!-- .aione-copyright -->
@@ -66,13 +104,49 @@
 		</div>
 	</div>
 	<style type="text/css">
+		.aione-content {
+		    position: absolute;
+		}
 		.aione-page-content {
 		    margin: 0;
+		    min-height: 580px;
+		}
+		.oxo-color{
+			color: #168dc5;
+		}
+		.oxo-color:hover{
+			color: #1570a6;
+		}
+		.primary-color{
+			color: #1570a6;
+		}
+		.secondary-color{
+			color: #414043;
+		}
+		
+		.editor{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left:0;
+			width: 50%;
+			border-right: 1px solid #e8e8e8
+		}
+		.preview{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right:0;
+			width: 50%;
+		}
+		.ace_content{
+			background: linear-gradient( to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) );
+    		background-size: 100% 28px;
 		}
 	</style>
 	
 	<script type="text/javascript">
-		//require.config({paths: { "ace" : "assets/ace"}});
+		//require.config({paths: { "ace" : "../lib/ace"}});
 		//require("ace/ext/emmet");
 		var editor = ace.edit("editor");
 		//editor.setValue($('#'+value).val()); 
@@ -80,38 +154,39 @@
 		editor.getSession().setMode("ace/mode/html");
 		editor.setAutoScrollEditorIntoView(true);
 		editor.setShowPrintMargin(false);
-		//editor.setOption("enableEmmet", true); 
+		editor.setOption("enableEmmet", true); 
 		editor.setOption('enableBasicAutocompletion',true);
 		editor.setAutoScrollEditorIntoView(true);
-		
+				
 		editor.getSession().on("change", function () {
-			var data = editor.session.getValue().trim();
-			localStorage.setItem('ace_editor',data);
-			$('.aione-output').html(data);
+			var code = editor.getSession().getValue().trim();
+			localStorage.setItem('code',code);
+			$('.preview').html(code);
 		});
-
-	
-		
 
 	   	$(document).ready(function() {
 	   		editor.focus();
-	   		session = editor.getSession();
-
-
+	   		//set value to ace editor
+			if(editor.getSession().getValue() != null){
+				var code = localStorage.getItem('code');
+				$('.preview').html(code);
+			}
+			editor.setValue(localStorage.getItem('code'));
+	   		
 	   		//append the character cout and append html into output box 
 			document.getElementById('editor').addEventListener('keyup',function(){
-				countData();
+				show_stats();
 			});
 
 	   		
 	   	});
 	   	//get the line no and total line with character count
-		function countData(){
+		function show_stats(){
 			var currline = editor.getSelectionRange().start.row;
-			var wholelinetxt = editor.session.getLine(currline);
+			var wholelinetxt = editor.getSession().getLine(currline);
 			var current_row_characters = wholelinetxt.toString().trim().length;
-			var data = editor.session.getValue().trim().length;
-			var totalLines = session.getLength();
+			var data = editor.getSession().getValue().trim().length;
+			var totalLines = editor.getSession().getLength();
 
 			$('.editor-data').html('Line '+(currline+1)+' of '+totalLines+' ,Char '+current_row_characters);
 		}	
