@@ -146,6 +146,9 @@
 	</style>
 	
 	<script type="text/javascript">
+		if(window.closed){
+			alert("helklo");
+		}
 		//require.config({paths: { "ace" : "../lib/ace"}});
 		//require("ace/ext/emmet");
 		var editor = ace.edit("editor");
