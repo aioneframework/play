@@ -38,7 +38,7 @@
 	<link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-16x16.png" sizes="16x16" />
 	<link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-128.png" sizes="128x128" />
-
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 
 
 
@@ -46,6 +46,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400">
     <!-- Core-->
 	<script type="text/javascript" src="https://aioneframework.com/aioneframework/assets/js/vendor.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="https://aioneframework.com/aioneframework/assets/js/aione.js"></script>
     <!-- Google Analytics-->
     <script type="text/javascript" src="https://aioneframework.com/assets/js/ga.js"></script>
@@ -77,15 +78,18 @@
 
 			<div id="aione_main" class="aione-main fullwidth">
 				<div class="wrapper">
-					<div id="aione_content" class="aione-content">
+					<div id="aione_content" class="aione-content ">
 						<div class="wrapper">
-							<div id="aione_page_content" class="aione-page-content">
+							<div id="aione_page_content" class="aione-page-content m-0">
 								<div class="wrapper">
-									<div class="ar aione-play-wrapper">
-										<div class="ac l50 m50 s100 p-0">
+									<div class="ar aione-play-wrapper panel-container">
+										<div class="ac l50 m50 s100 p-0 panel-left">
 											<div id="editor" class="editor"></div>
 										</div>
-										<div class="ac l50 m50 s100 p-0">
+										<div class="splitter">
+											
+										</div>
+										<div class="ac l50 m50 s100 p-0 panel-right">
 											<div id="aione-output" class="preview"></div>
 										</div>
 									</div>	
@@ -104,7 +108,70 @@
 		</div>
 	</div>
 	<style type="text/css">
-		.aione-content {
+		.page-container {
+		  margin: 20px;
+		}
+
+		/* horizontal panel*/
+
+		.panel-container {
+		height: calc( 100vh - 78px);
+		  display: flex;
+		  flex-direction: row;
+		  border: 1px solid silver;
+		  overflow: hidden;
+		  
+		  /* avoid browser level touch actions */
+		  xtouch-action: none;
+		}
+
+		.panel-left {
+		  flex: 0 0 auto;
+		  /* only manually resize */
+		  padding: 10px;
+		  width: 300px;
+		  min-height: 200px;
+		  min-width: 150px;
+		  white-space: nowrap;
+		  background: #838383;
+		  color: white;
+		}
+
+		.splitter {
+		  flex: 0 0 auto;
+		  width: 10px;  
+		  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+		  min-height: 200px;
+		  cursor: col-resize;  
+		}
+
+		.panel-right {
+		  flex: 1 1 auto;
+		  /* resizable */
+		  
+		  width: 100%;
+		  min-height: 200px;
+		  min-width: 200px;
+		  background: #fff;
+		  overflow-y: scroll;
+		}
+
+
+
+		.splitter-horizontal {
+		  flex: 0 0 auto;
+		  height: 18px;
+		  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat #535353;
+		  cursor: row-resize;
+		}
+		.ace_scroller{
+			overflow-y: hidden;
+			overflow-x: hidden;  
+		}
+
+
+
+		/*.aione-content {
 		    position: absolute;
 		}
 		.aione-page-content {
@@ -122,30 +189,36 @@
 		}
 		.secondary-color{
 			color: #414043;
-		}
+		}*/
 		
 		.editor{
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			left:0;
-			width: 50%;
+			width: 100%;
 			border-right: 1px solid #e8e8e8
 		}
-		.preview{
+		/*.preview{
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			right:0;
 			width: 50%;
-		}
+		}*/
 		.ace_content{
 			background: linear-gradient( to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) );
     		background-size: 100% 28px;
 		}
 	</style>
-	
+	<script>
+    $('.panel-left').resizable({
+        handleSelector: '.splitter',
+        resizeHeight: false
+    });
+</script>
 	<script type="text/javascript">
+
 		if(window.closed){
 			alert("helklo");
 		}
