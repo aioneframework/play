@@ -2,7 +2,7 @@
 
 //Install stage sets up the offline page in the cache and opens a new cache
 self.addEventListener('install', function(event) {
-  var offlinePage = new Request('index.php');
+  var offlinePage = new Request('index.html'); 
   event.waitUntil(
     fetch(offlinePage).then(function(response) {
       return caches.open('aione-offline').then(function(cache) {
@@ -19,7 +19,7 @@ self.addEventListener('fetch', function(event) {
     fetch(event.request).catch(function(error) {
       console.error( 'Network request Failed. Serving offline page ' + error );
       return caches.open('aione-offline').then(function(cache) {
-        return cache.match('index.php');
+        return cache.match('index.html');
       });
     }
   ));
