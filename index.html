@@ -222,7 +222,7 @@
 	<script type="text/javascript">
 
 		if(window.closed){
-			alert("helklo");
+			alert("hello");
 		}
 		//require.config({paths: { "ace" : "../lib/ace"}});
 		//require("ace/ext/emmet");
@@ -254,6 +254,8 @@
 	   		//append the character cout and append html into output box 
 			document.getElementById('editor').addEventListener('keyup',function(){
 				show_stats();
+				init_sliders();
+
 			});
 
 	   		
@@ -267,7 +269,7 @@
 			var totalLines = editor.getSession().getLength();
 
 			$('.editor-data').html('Line '+(currline+1)+' of '+totalLines+' ,Char '+current_row_characters);
-		}	
+		}
 	</script>
 </body>
 </html>
